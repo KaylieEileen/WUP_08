@@ -83,11 +83,18 @@ summary.lm(headwthModel)
 ```
 
 For model length ~ headwith, adjusted $r^2$ = 0.53, this is less than adjusted $r^2$ of 0.84 for headlength.        
-This is not as good as the chest model.   
+This is not as good as the headlength model.   
 
-##
+## Length ~ Weight
+```{r}
+weightModel <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(weightModel)
+summary.lm(weightModel)
+```
 
-
+For model length ~ weight, adjusted $r^2$ = 0.74, this is less than adjusted $r^2$ of 0.84 for headlength.        
+This is not as good as the headlength model. 
 
 
 
