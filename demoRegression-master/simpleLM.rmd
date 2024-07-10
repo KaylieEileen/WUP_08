@@ -31,7 +31,7 @@ For model length ~ neck, adjusted $r^2$ = 0.75
 
 ## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
 
-## Length based on age 
+## Length based on Age 
 ```{r}
 ageModel <- lm(LENGTH~AGE,data=bears)
 plot(LENGTH~AGE,data=bears)
@@ -39,7 +39,8 @@ abline(ageModel)
 summary.lm(ageModel)
 ```
 
-For model length ~ age, adjusted $r^2$ = 0.51, this is less than the adjusted $r^2$ for neck. This model is not as good as the neck model
+For model length ~ age, adjusted $r^2$ = 0.51, this is less than the adjusted $r^2$ for neck.       
+This model is not as good as the neck model
 
 ## Length ~ Chest  
 ```{r}
@@ -49,18 +50,20 @@ abline(chestModel)
 summary.lm(chestModel)
 ```
 
-For model length ~ chest, adjusted $r^2$ = 0.79, this is greater than the adjusted $r^2$ for age and neck. This model is better than the neck and age model. 
+For model length ~ chest, adjusted $r^2$ = 0.79, this is greater than the adjusted $r^2$ of 0.75 for neck.    
+This model is better than the neck model. 
 
-## Length ~ sex
+## Length ~ Sex
 ```{r}
 sexModel <- lm(LENGTH~SEX,data=bears)
 plot(LENGTH~SEX,data=bears)
 summary.lm(sexModel)
 ```
 
-For model length ~ sex, adjusted $r^2$ = -0.008373, this is less than the adjusted $r^2$ for age, neck and chest. This model is not as good as the neck, age, and chest model. 
+For model length ~ sex, adjusted $r^2$ = -0.008373, this is less than the adjusted $r^2$ of 0.79 for chest   
+This is not as good as the chest model.  
 
-## Length ~ headlength
+## Length ~ Headlength
 ```{r}
 headlenModel <- lm(LENGTH~HEADLEN,data=bears)
 plot(LENGTH~HEADLEN,data=bears)
@@ -68,13 +71,21 @@ abline(headlenModel)
 summary.lm(headlenModel)
 ```
 
-For model length ~ headlength, adjusted $r^2$ = 0.84, this is greater than the adjusted $r^2$ for age, neck, chest and sex. This model is better than the neck, age, chest, and sex model. 
+For model length ~ headlength, adjusted $r^2$ = 0.84, this is greater than the adjusted $r^2$ of 0.79 for chest.       
+This model is better than chest model.   
 
+## Length ~ Headwidth
+```{r}
+headwthModel <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(headwthModel)
+summary.lm(headwthModel)
+```
 
+For model length ~ headwith, adjusted $r^2$ = 0.53, this is less than adjusted $r^2$ of 0.84 for headlength.        
+This is not as good as the chest model.   
 
-
-
-
+##
 
 
 
